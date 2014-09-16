@@ -48,14 +48,14 @@ class corobienie:
 polecenia = ('plan', 'costam')
 br = mechanize.Browser()
 br.open('https://dziennik.librus.pl/uczen_index')
-czekanko(waitinga)
-br.select_form(name='logowanie')
-uzyszk = raw_input('Wpisz nazwę użytkownika:  ')
-br['login'] = uzyszk
-haselo = getpass.getpass('Wpisz hasło (zabezp. przed pokazaniem na ekr. znaków hasła: JEST):  ')
-br['passwd'] = haselo
-odpoa = br.submit()
-
+#czekanko(waitinga)
+#br.select_form(name='logowanie')
+#uzyszk = raw_input('Wpisz nazwę użytkownika:  ')
+#br['login'] = uzyszk
+#haselo = getpass.getpass('Wpisz hasło (zabezp. przed pokazaniem na ekr. znaków hasła: JEST):  ')
+#br['passwd'] = haselo
+#odpoa = br.submit()
+odpoa = br.read() #d
 assert br.viewing_html()
 print br.title()
 print odpoa.geturl()
