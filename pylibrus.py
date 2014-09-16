@@ -59,7 +59,7 @@ odpoa = br #d
 assert br.viewing_html()
 print br.title()
 print odpoa.geturl()
-print odpoa.info() #d
+#print odpoa.info() #d
 print odpoa.read() #d
 while True:
 	corobienie(br,polecenia)
