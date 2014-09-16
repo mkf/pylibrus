@@ -48,6 +48,7 @@ class corobienie:
 polecenia = ('plan', 'costam')
 br = mechanize.Browser()
 br.open('https://dziennik.librus.pl/uczen_index')
+czekanko(waitinga)
 br.select_form(name='logowanie')
 uzyszk = raw_input('Wpisz nazwę użytkownika:  ')
 br['login'] = uzyszk
