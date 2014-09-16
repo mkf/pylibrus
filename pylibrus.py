@@ -70,5 +70,12 @@ print odpoa.info() #d
 readzikdebugu = odpoa.read() 
 if len(re.findall("Zaloguj się aby przejść do wybranej strony.", readzikdebugu)):
 	odpoah = restarcik(br,uzyszk,haselo)
+	assert br.viewing_html()
+	print br.title()
+	print odpoah.geturl()
+	print odpoah.info()
+	print odpoah.read()
+else:
+	print odpoa.read()
 while True:
 	corobienie(br,polecenia)
