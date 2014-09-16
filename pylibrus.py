@@ -30,11 +30,21 @@ class corobienie:
 				print u'Błąd w kwestii informacji co robić'
 				quit()
 	def zdobadzpolecenie(self):
-		
+		print 'Dostępne polecenia: '
+		print polecenia
+		polec = raw_input('Wpisz polecenie: ')
+		try:
+			polecenia.index(polec)
+			run = polec
+			return run
+		except:
+			print 'Nie znaleziono polecenia: %s' % polec
+			runu = zdobadzpolecenie()
+			return runu
 	def plan(self,br,dajreada):
-		
+		czasik = time.time()
 	def costam(self,br):
-		
+		czasik = time.time()
 polecenia = ('plan', 'costam')
 br = mechanize.Browser()
 br.open('https://dziennik.librus.pl/uczen_index')
