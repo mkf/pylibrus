@@ -55,11 +55,20 @@ br['login'] = uzyszk
 haselo = getpass.getpass('Wpisz hasło (zabezp. przed pokazaniem na ekr. znaków hasła: JEST):  ')
 br['passwd'] = haselo
 odpoa = br.submit()
+def restarcik(br, uzyszkn, haselon):
+	br.select_form(name='logowanie')
+	br['login'] = uzyszkn
+	br['passwd'] = haselon
+	czekanko(waitinga)
+	odpoah = br.submit()
+	return odpoah
 
 assert br.viewing_html()
 print br.title()
 print odpoa.geturl()
 print odpoa.info() #d
-print odpoa.read() #d
+readzikdebugu = odpoa.read() 
+if len(re.findall("Zaloguj się aby przejść do wybranej strony.", readzikdebugu)):
+	odpoah = restarcik(br,uzyszk,haselo)
 while True:
 	corobienie(br,polecenia)
