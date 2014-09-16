@@ -7,7 +7,7 @@ import argparse
 import re
 import datetime
 import time
-waitinga = 10
+waitinga = 2
 
 def czekanko(waiting):
 	#dotlumaczenia
