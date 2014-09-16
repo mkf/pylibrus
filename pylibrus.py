@@ -7,7 +7,7 @@ import argparse
 import re
 import datetime
 import time
-waitinga = 15
+waitinga = 10
 
 def czekanko(waiting):
 	#dotlumaczenia
@@ -47,7 +47,7 @@ class corobienie:
 		czasik = time.time()
 polecenia = ('plan', 'costam')
 br = mechanize.Browser()
-br.open('https://dziennik.librus.pl/uczen_index')
+br.open('https://dziennik.librus.pl/loguj/przenies/uczen_index')
 #czekanko(waitinga)
 #br.select_form(name='logowanie')
 #uzyszk = raw_input('Wpisz nazwę użytkownika:  ')
