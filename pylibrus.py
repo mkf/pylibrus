@@ -55,7 +55,7 @@ br.open('https://dziennik.librus.pl/uczen_index')
 #haselo = getpass.getpass('Wpisz hasło (zabezp. przed pokazaniem na ekr. znaków hasła: JEST):  ')
 #br['passwd'] = haselo
 #odpoa = br.submit()
-odpoa = br.read() #d
+odpoa = br #d
 assert br.viewing_html()
 print br.title()
 print odpoa.geturl()
