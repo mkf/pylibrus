@@ -10,8 +10,6 @@ import time
 waitinga = 2
 
 def czekanko(waiting):
-	#dotlumaczenia
-	#print "Waiting %5d s for the website (if something will crash soon, the chosen waiting time may be too short)..." % waiting
 	print "Czekanie %5d s na załadowanie strony (jeżeli coś się zcrashuje, oznacza to że wybrany czas czekanie może być za krótki)..." % waiting
 	for waitinglive in range(0,waiting):
 		time.sleep(1)
