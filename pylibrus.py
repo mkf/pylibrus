@@ -50,7 +50,7 @@ czekanko(waitinga)
 br.select_form(name='logowanie')
 uzyszk = raw_input('Wpisz nazwę użytkownika:  ')
 br['login'] = uzyszk
-haselo = getpass.getpass('Wpisz hasło (zabezp. przed pokazaniem na ekr. znaków hasła: JEST):  ')
+haselo = getpass.getpass('Wpisz hasło (zabezp. przed pokazaniem na ekr. znaków hasła: OK):  ')
 br['passwd'] = haselo
 odpoa = br.submit()
 def restarcik(br, uzyszkn, haselon):
