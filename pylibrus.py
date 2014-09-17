@@ -67,8 +67,8 @@ print odpoa.geturl()
 print odpoa.info() #d
 readzikdebugu = odpoa.read()
 if len(re.findall("Do zalogowania się wymagane jest dodatkowo wpisanie kodu z obrazka", readzikdebugu)):
-	print "Przerąbane. Że niby za dużo logowań, blablabla, CAPTCHA. Tego jeszcze nie obsługuję. Wychodzimy!"
-	quit() 
+	print "Przerąbane. Że niby za dużo logowań, blablabla, CAPTCHA. Tego jeszcze nie obsługuję. Wychodzimy (albo jednak nie)!"
+    #quit()
 if len(re.findall("Zaloguj się aby przejść do wybranej strony.", readzikdebugu)):
 	odpoah = restarcik(br,uzyszk,haselo)
 	assert br.viewing_html()
