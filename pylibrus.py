@@ -17,31 +17,31 @@ def czekanko(waiting):
 
 
 class corobienie:
-	def __init__(self,br,polecenia):
-			self.polecenia = polecenia
-			corobic = self.zdobadzpolecenie()
-			if corobic == 'plan':
-				self.plan(br, "n")
-			elif corobic == 'costam':
-				self.costam(br)
-			else:
-				print u'Błąd w kwestii informacji co robić'
-				quit()
-	def zdobadzpolecenie(self):
-		print 'Dostępne polecenia: '
-		print polecenia
-		polec = raw_input('Wpisz polecenie: ')
-		try:
-			polecenia.index(polec)
-			run = polec
-			return run
-		except:
-			print 'Nie znaleziono polecenia: %s' % polec
-			runu = zdobadzpolecenie()
-			return runu
-	def plan(self,br,dajreada):
+    def __init__(self,br,polecenia):
+        self.polecenia = polecenia
+        corobic = self.zdobadzpolecenie()
+        if corobic == 'plan':
+            self.plan(br, "n")
+        elif corobic == 'costam':
+            self.costam(br)
+        else:
+            print u'Błąd w kwestii informacji co robić'
+            quit()
+    def zdobadzpolecenie(self):
+        print 'Dostępne polecenia: '
+        print polecenia
+        polec = raw_input('Wpisz polecenie: ')
+        try:
+            polecenia.index(polec)
+            run = polec
+            return run
+        except:
+            print 'Nie znaleziono polecenia: %s' % polec
+            runu = zdobadzpolecenie()
+            return runu
+    def plan(self,br,dajreada):
         szasowilasjkdfg = time.time()
-	def costam(self,br):
+    def costam(self,br):
         czasik = time.time()
 polecenia = ('plan', 'costam')
 br = mechanize.Browser()
