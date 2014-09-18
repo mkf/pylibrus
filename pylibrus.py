@@ -40,8 +40,7 @@ class corobienie:
 			runu = zdobadzpolecenie()
 			return runu
 	def plan(self,br,dajreada):
-        #br.f
-        time.sleep(1)
+        szasowilasjkdfg = time.time()
 	def costam(self,br):
 		czasik = time.time()
 polecenia = ('plan', 'costam')
