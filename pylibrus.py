@@ -80,7 +80,7 @@ class corobienie:
 polecenia = ('plan', 'conowego', 'dzisiaj', 'jutro', 'oceny', 'nieobec', 'terminarz', 'ogloszenia', 'szczesliwynr', 'pomoc', 'wyjdz')
 br = mechanize.Browser()
 #br.open('https://dziennik.librus.pl/loguj/przenies/uczen_index')
-br.open('https://m.dziennik.librus.pl/module/Common/action/Login') #tymczasowo przestawiamy się na wersję mobilną — desktopowej chyba nie da się
+br.open('https://m.dziennik.librus.pl/module/Common/action/Login') #tymczasowo przestawiamy się na wersję mobilną — desktopowej chyba nie da się zbyt łatwo
 czekanko(waitinga)
 try:
     br.select_form(name='logowanie')
