@@ -42,7 +42,7 @@ class corobienie:
 	def plan(self,br,dajreada):
         szasowilasjkdfg = time.time()
 	def costam(self,br):
-		czasik = time.time()
+        czasik = time.time()
 polecenia = ('plan', 'costam')
 br = mechanize.Browser()
 #br.open('https://dziennik.librus.pl/loguj/przenies/uczen_index')
