@@ -45,9 +45,13 @@ class corobienie:
 		czasik = time.time()
 polecenia = ('plan', 'costam')
 br = mechanize.Browser()
-br.open('https://dziennik.librus.pl/loguj/przenies/uczen_index')
+#br.open('https://dziennik.librus.pl/loguj/przenies/uczen_index')
+br.open('https://m.dziennik.librus.pl/module/Common/action/Login') #tymczasowo przestawiamy się na wersję mobilną — desktopowej chyba nie da się
 czekanko(waitinga)
-br.select_form(name='logowanie')
+try:
+    br.select_form(name='logowanie')
+except:
+    br.select_form(nr=0)
 uzyszk = raw_input('Wpisz nazwę użytkownika:  ')
 br['login'] = uzyszk
 haselo = getpass.getpass('Wpisz hasło (zabezp. przed pokazaniem na ekr. znaków hasła: OK):  ')

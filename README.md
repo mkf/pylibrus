@@ -4,7 +4,7 @@ pylibrus
 Nieoficjalne API parsujące dla Librusa (http://dziennik.librus.pl)
 
 
-
+Tymczasowo program zajmuje się wyłącznie stroną mobilną, ze względu na trudności z javascriptem przy używaniu mechanize.
 
 
 
