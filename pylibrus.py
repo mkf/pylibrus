@@ -40,7 +40,7 @@ class corobienie:
 			runu = zdobadzpolecenie()
 			return runu
 	def plan(self,br,dajreada):
-		czasik = time.time()
+        #br.f
 	def costam(self,br):
 		czasik = time.time()
 polecenia = ('plan', 'costam')
@@ -90,6 +90,8 @@ try:
     else:
         print odpoa.read()
 except:
-    print odpoa.read()
+    #print odpoa.read()
+    print readzikdebugu
+
 while True:
 	corobienie(br,polecenia)
