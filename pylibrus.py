@@ -41,6 +41,7 @@ class corobienie:
 			return runu
 	def plan(self,br,dajreada):
         #br.f
+        time.sleep(1)
 	def costam(self,br):
 		czasik = time.time()
 polecenia = ('plan', 'costam')
