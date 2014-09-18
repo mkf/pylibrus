@@ -70,23 +70,26 @@ print br.title()
 print odpoa.geturl()
 print odpoa.info() #d
 readzikdebugu = odpoa.read()
-if len(re.findall("Do zalogowania się wymagane jest dodatkowo wpisanie kodu z obrazka", readzikdebugu)):
-    print "Przerąbane. Że niby za dużo logowań, blablabla, CAPTCHA. Tego jeszcze nie obsługuję. Wychodzimy! (albo jednak nie)"
-    #quit()
-    odpoag = restarcik(br,uzyszk,haselo)
-    assert br.viewing_html()
-    print br.title()
-    print odpoag.geturl()
-    print odpoag.info()
-    print odpoag.read()
-if len(re.findall("Zaloguj się aby przejść do wybranej strony.", readzikdebugu)):
-	odpoah = restarcik(br,uzyszk,haselo)
-	assert br.viewing_html()
-	print br.title()
-	print odpoah.geturl()
-	print odpoah.info()
-	print odpoah.read()
-else:
-	print odpoa.read()
+try:
+    if len(re.findall("Do zalogowania się wymagane jest dodatkowo wpisanie kodu z obrazka", readzikdebugu)):
+        print "Przerąbane. Że niby za dużo logowań, blablabla, CAPTCHA. Tego jeszcze nie obsługuję. Wychodzimy! (albo jednak nie)"
+        #quit()
+        odpoag = restarcik(br,uzyszk,haselo)
+        assert br.viewing_html()
+        print br.title()
+        print odpoag.geturl()
+        print odpoag.info()
+        print odpoag.read()
+    if len(re.findall("Zaloguj się aby przejść do wybranej strony.", readzikdebugu)):
+        odpoah = restarcik(br,uzyszk,haselo)
+        assert br.viewing_html()
+        print br.title()
+        print odpoah.geturl()
+        print odpoah.info()
+        print odpoah.read()
+    else:
+        print odpoa.read()
+except:
+    print odpoa.read()
 while True:
 	corobienie(br,polecenia)
