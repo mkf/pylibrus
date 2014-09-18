@@ -68,7 +68,7 @@ def restarcik(br, uzyszkn, haselon):
 assert br.viewing_html()
 print br.title()
 print odpoa.geturl()
-print odpoa.info() #d
+#print odpoa.info() #d
 readzikdebugu = odpoa.read()
 try:
     if len(re.findall("Do zalogowania się wymagane jest dodatkowo wpisanie kodu z obrazka", readzikdebugu)):
