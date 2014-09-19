@@ -19,7 +19,7 @@ def czekanko(waiting):
 class corobienie:
     def __init__(self,br,polecenia):
         self.polecenia = polecenia
-        corobic = self.zdobadzpolecenie('Wpisz polecenie: ')
+        corobic = self.zdobadzpolecenie('Wpisz polecenie: ',polecenia)
         if corobic == 'plan':
             self.plan(br, "n")
         elif corobic == 'conowego':
@@ -33,22 +33,24 @@ class corobienie:
         elif corobic == 'nieobec':
             self.nieobec(br)
         elif corobic == 'terminarz':
-            self.terminarz(br,"n")
+            self.terminarz(br,"n","n")
         #tutaj będzie elif że jeśli corobic to "terminarz YYYY-MM", to on wtedy odpala terminarz dla tego miesiaca, i/lub lepiej, może być terminarzwyb czy coś takiego, że będzie trochę interaktywny, podpolecenia tj. wybór daty w zasadzie wyłącznie, albo potem nawet od do hurtowe czytanie, co do tak wgl podpolecen wszystkich, to będzie trza dla każdego polecenia z podpoleceniami zrobic podpolecenie pomoc
-        elif corobic == 'ogloszenia':
-            self.ogloszenia(br)
+	elif corobic == 'terminarzwyb':
+	    self.terminarzwyb(br)	
+	elif corobic == 'ogloszenia':
+       	    self.ogloszenia(br)
         elif corobic == 'szczesliwynr':
             self.szczesliwynr(br)
         elif corobic == 'pomoc':
-            print wytlumaczeniepolecen
+       	    print wytlumaczeniepolecen
         elif corobic == 'wyjdz':
             quit()
         else:
             print u'Błąd w kwestii informacji co robić'
             quit()
-    def zdobadzpolecenie(self,pytanie):
+    def zdobadzpolecenie(self,pytanie,komendki):
         print 'Dostępne polecenia: '
-        print polecenia
+        print komendki
         polec = raw_input(pytanie)
         try:
             polecenia.index(polec)
@@ -70,14 +72,34 @@ class corobienie:
         czasik = time.time()
     def nieobec(self,br):
         czasik = time.time()
-    def terminarz(self,br,wybtermcl):
-        czasik = time.time()
+    def terminarz(self,br,wybtermclpocz,wybtermclkonc):
+        terazmc = '2014-09' #tu będzie z datetime.timetuple przerabiane na string w tym stylu
+        if wybtermclpocz == "n":
+            wtcpocz = terazmc
+        else:
+            wtcpocz = wybtermclpocz
+        if wybtermclkonc == "n":
+            wtckonc = terazmc
+        else:
+            wtckonc = wybtermclkonc
+        #tu będzie przerabianie tych datowych stringów na daty ładne numeryczne, raczej nie na obiekty datetime
+    def terminarzwyb(self,br):
+        print u"Wybierz miesiące, które mają być zparsowane, licząc włącznie"
+        rpocz = raw_input('Podaj rok miesiąca początkowego:  ')
+        mpocz = raw_input('Podaj miesiąc początkowy:  ')
+        dpocz = str('%4d-%2d' % (rpocz,mpocz))
+        print "Wybrano datę początkową: %4d-%2d" % (rpocz, mpocz)
+        rkonc = raw_input('Podaj rok miesiąca końcowego:  ')
+        mkonc = raw_input('Podaj miesiąc końcowy:  ')
+        dkonc = str('%4d-%2d' % (rkonc,mkonc))
+        print "Wybrano datę końcową: %s" % dkonc
+        self.terminarz(br, dpocz, dkonc)
     def ogloszenia(self,br):
         czasik = time.time()
     def szczesliwynr(self,br):
         czasik = time.time()
 
-polecenia = ('plan', 'conowego', 'dzisiaj', 'jutro', 'oceny', 'nieobec', 'terminarz', 'ogloszenia', 'szczesliwynr', 'pomoc', 'wyjdz')
+polecenia = ('plan', 'conowego', 'dzisiaj', 'jutro', 'oceny', 'nieobec', 'terminarz', 'terminarzwyb', 'ogloszenia', 'szczesliwynr', 'pomoc', 'wyjdz')
 br = mechanize.Browser()
 #br.open('https://dziennik.librus.pl/loguj/przenies/uczen_index')
 br.open('https://m.dziennik.librus.pl/module/Common/action/Login') #tymczasowo przestawiamy się na wersję mobilną — desktopowej chyba nie da się zbyt łatwo
